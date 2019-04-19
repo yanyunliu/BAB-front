@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>提交需求</title>
+ <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+ <!--theme-style-->
+ <link href="css/style.css" rel="stylesheet" type="text/css" media="all" />	
+ <!--//theme-style-->
+ <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+ <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+ <!--fonts-->
+ <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800' rel='stylesheet' type='text/css'>
+ <!--//fonts-->
+ <script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
+ <script src="js/jquery.easydropdown.js"></script>
+ <script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+<style type="text/css"> 
+	.header_bgimg {
+		background-image:url(images/header_img.jpg);
+		background-size:cover;
+	} 
+</style>
+</head>
+<body> 
+	<!--header-->
+	<div class="header"> 
+		<div class="jumbotron header_bgimg text-center">        	
+			<h1>BAB联盟</h1>	        
+			<p>发布需求到BAB联盟平台 ，快速为您匹配专业的服务商来解决需求难题</p>
+			<p>
+				<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">点击此处了解更多</button>
+			</p>
+		</div> 
+		<div class="bottom-header">
+			<div class="container">
+				<div class="header-bottom-left">
+					<div class="logo">
+						<a href="index.html"><img src="images/logo.png" alt=" " /></a>
+					</div>
+					<!-- 搜索栏 -->
+					<div class="search">
+						<input type="text"  value="" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = '';}" >
+						<input type="submit"  value="搜索"> 
+					</div>
+					<div class="clearfix"> </div>
+				</div>
+				<div class="header-bottom-right">
+					<ul class="men-grid">
+						<li><a href="index.html"><span> </span>首页</a></li>
+						
+						<!-- <li><a href="login.html"><span> </span>我的账户</a></li> -->
+						<!-- <li class="login"><a href="login.html"><span> </span>LOGIN</a>|</li> -->
+						<li class="cart" data-toggle="modal" data-target="#myModal"><a href="#"><span> </span>技术咨询</a></li>
+					</ul>
+					<!-- <div class="sign-up-right">
+						<a href="register.html">SIGNUP</a>
+					</div> -->
+				</div>
+				<div class="clearfix"> </div>	
+			</div>
+		</div>
+	</div>
+	<!--container-->
+	<div class="container">
+		 
+            		<h3>需求简述</h3>
+            		<div class="contact-form">
+							<form class="form-horizontal" method="post" action="contact-post.html"> 
+								 <div class="form-group">
+								 	 <label class="col-sm-1 control-label">项目名称</label>
+								 	 <div class="col-sm-5"> <input type="password" class="form-control" id="inputPassword" placeholder="请输入你的项目名称"> </div>
+								 	 
+								 </div>
+								 <div class="form-group">
+								 	<textarea value="Message" onfocus="this.value= '';" onblur="if (this.value == '') {this.value = '请您简要描述您的需求，实现的功能，效果等：如：做一个类似于滴滴打车的APP，做个像淘宝一样的网站；';}">请您简要描述您的需求，实现的功能，效果等：如：做一个类似于滴滴打车的APP，做个像淘宝一样的网站；
+								 	</textarea>
+								 </div>
+								 <div class="form-group">
+								 	 <label class="col-sm-2 control-label">需求附件*</label>
+								 	 <div class="col-sm-10"> <input type="file" id="inputfile"  > </div>
+								 	 
+								 </div>
+								<div class="form-group"><h3>请输入您预期的项目工期、价格：</h3></div>
+								<div class="form-group">
+									<label class="col-sm-1 control-label">预交日期*</label>
+									<div class="col-sm-5"> <input type="password" class="form-control" id="inputPassword" placeholder="请输入你的预期交付日期"> </div>
+									<label for="inputPassword" class="col-sm-1 control-label">预期工期*</label>
+									<div class="col-sm-5"> <input type="password" class="form-control" id="inputPassword" placeholder="请输入你的预期工期"> </div>
+								  
+								</div>
+								<div class="form-group">
+									<label class="col-sm-1 control-label">预期价格*</label>
+									<div class="col-sm-5"> <input type="password" class="form-control" id="inputPassword" placeholder="请输入你的预期价格"> </div>
+									<label for="inputPassword" class="col-sm-1 control-label">可否议价*</label>
+									<div class="col-sm-5"> 
+										<select class="form-control">
+											<option>可以议价</option>
+											<option>不可议价</option> 
+										</select>
+									</div>
+								  
+								</div> 
+								<div class="form-group"><h3>请输入您的联系方式：</h3></div>
+								<div class="form-group">
+									<label class="col-sm-1 control-label">邮箱*</label>
+									<div class="col-sm-5"> <input type="password" class="form-control" id="inputPassword" placeholder="请输入你的邮箱"> </div>
+									<label for="inputPassword" class="col-sm-1 control-label">手机号*</label>
+									<div class="col-sm-5"> <input type="password" class="form-control" id="inputPassword" placeholder="请输入你的手机号"> </div>
+								  
+								</div>
+								<div class="form-group">
+									<label class="col-sm-1 control-label">QQ账号*</label>
+									<div class="col-sm-5"> <input type="password" class="form-control" id="inputPassword" placeholder="请输入你的QQ账号"> </div>
+									<label for="inputPassword" class="col-sm-1 control-label">微信账号*</label>
+									<div class="col-sm-5"> <input type="password" class="form-control" id="inputPassword" placeholder="请输入你的微信账号"> </div>
+								  
+								</div>
+								
+								 <div class="form-group">
+								 	<div class="col-sm-11">   </div>
+								 	<div class="col-sm-1">  <input type="submit" value="发布需求"> </div>
+								 </div>
+							</form> 
+					</div>
+     <div class="row">
+		 <div class="col-sm-11">  
+		   <address class="address"> 
+		  	<dl>
+		  		<dt>联系我们</dt> 
+		  		<dd>联系电话:<span> +1 800 547 5478</span></dd>
+		  		<dd>传真: <span>+1 800 658 5784</span></dd>
+		  		<dd>邮箱:&nbsp; <a href="mailto@vintage.com">info(at)bigshop.com</a></dd>
+		  	</dl>
+		  </address>
+		  </div> 
+	 </div>
+	</div>
+	
+	<!-- 模态框（Modal） -->
+	<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" 
+							aria-hidden="true">×
+					</button>
+					<h4 class="modal-title" id="myModalLabel">
+						提出你的疑惑，随后我们会与你联系
+					</h4>
+				</div>
+				<div class="modal-body">
+					  <form role="form">
+						<div class="form-group">
+						<label for="name">疑惑</label>
+						<textarea class="form-control" rows="3"></textarea>
+						<input type="password" class="form-control" id="inputPassword" placeholder="请输入你的手机号码">
+						</div> 
+					  </form>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-default"  data-dismiss="modal">关闭 </button>
+					<button type="button" class="btn btn-primary" data-dismiss="modal"> 提交更改 </button>
+				</div>
+			</div><!-- /.modal-content -->
+		</div><!-- /.modal-dialog -->
+	</div><!-- /.modal -->
+	
+	<!--footer-->
+	<div class="footer">
+		<div class="footer-top">
+			<div class="container">
+				<div class="latter">
+					<h6>NEWS-LATTER</h6>
+					<div class="sub-left-right">
+						<form>
+							<input type="text" value="Enter email here"onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Enter email here';}" />
+							<input type="submit" value="SUBSCRIBE" />
+						</form>
+					</div>
+					<div class="clearfix"> </div>
+				</div>
+				<div class="latter-right">
+					<p>FOLLOW US</p>
+					<ul class="face-in-to">
+						<li><a href="#"><span> </span></a></li>
+						<li><a href="#"><span class="facebook-in"> </span></a></li>
+						<div class="clearfix"> </div>
+					</ul>
+					<div class="clearfix"> </div>
+				</div>
+				<div class="clearfix"> </div>
+			</div>
+		</div>
+		<div class="footer-bottom">
+			<div class="container">
+				<div class="footer-bottom-cate">
+					<h6>CATEGORIES</h6>
+					<ul>
+						<li><a href="#">Curabitur sapien</a></li>
+						<li><a href="#">Dignissim purus</a></li>
+						<li><a href="#">Tempus pretium</a></li>
+						<li ><a href="#">Dignissim neque</a></li>
+						<li ><a href="#">Ornared id aliquet</a></li>
+						<li><a href="#">Ultrices id du</a></li>
+						<li><a href="#">Commodo sit</a></li>
+						<li ><a href="#">Urna ac tortor sc</a></li>
+						<li><a href="#">Ornared id aliquet</a></li>
+						<li><a href="#">Urna ac tortor sc</a></li>
+						<li ><a href="#">Eget nisi laoreet</a></li>
+						<li ><a href="#">Faciisis ornare</a></li>
+					</ul>
+				</div>
+				<div class="footer-bottom-cate bottom-grid-cat">
+					<h6>FEATURE PROJECTS</h6>
+					<ul>
+						<li><a href="#">Curabitur sapien</a></li>
+						<li><a href="#">Dignissim purus</a></li>
+						<li><a href="#">Tempus pretium</a></li>
+						<li ><a href="#">Dignissim neque</a></li>
+						<li ><a href="#">Ornared id aliquet</a></li>
+						<li><a href="#">Ultrices id du</a></li>
+						<li><a href="#">Commodo sit</a></li>
+					</ul>
+				</div>
+				<div class="footer-bottom-cate">
+					<h6>TOP BRANDS</h6>
+					<ul>
+						<li><a href="#">Curabitur sapien</a></li>
+						<li><a href="#">Dignissim purus</a></li>
+						<li><a href="#">Tempus pretium</a></li>
+						<li ><a href="#">Dignissim neque</a></li>
+						<li ><a href="#">Ornared id aliquet</a></li>
+						<li><a href="#">Ultrices id du</a></li>
+						<li><a href="#">Commodo sit</a></li>
+						<li ><a href="#">Urna ac tortor sc</a></li>
+						<li><a href="#">Ornared id aliquet</a></li>
+						<li><a href="#">Urna ac tortor sc</a></li>
+						<li ><a href="#">Eget nisi laoreet</a></li>
+						<li ><a href="#">Faciisis ornare</a></li>
+					</ul>
+				</div>
+				<div class="footer-bottom-cate cate-bottom">
+					<h6>OUR ADDERSS</h6>
+					<ul>
+						<li>Aliquam metus  dui. </li>
+						<li>orci, ornareidquet</li>
+						<li> ut,DUI.</li>
+						<li >nisi, dignissim</li>
+						<li >gravida at.</li>
+						<li class="phone">PH : 6985792466</li>
+						<li class="temp"> <p class="footer-class">Copyright &copy; 2015.Company name All rights reserved.More Templates <a href="http://www.cssmoban.com/" target="_blank" title="模板之家">模板之家</a> - Collect from <a href="http://www.cssmoban.com/" title="网页模板" target="_blank">网页模板</a></p></li>
+					</ul>
+				</div>
+				<div class="clearfix"> </div>
+			</div>
+		</div>
+	</div>
+
+</body>
+</html>
