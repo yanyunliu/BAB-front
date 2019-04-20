@@ -14,6 +14,39 @@
  <script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
  <script src="js/jquery.easydropdown.js"></script>
  <script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+ <script language="JScript">
+	 $(function(){
+		 var item="<div class='col-md-2'> <a href='#' class='thumbnail'> <img src='imgsrc' alt='百度公司' class='img-thumbnail'>"+
+			 		 "<div class='caption'> <h4>companyName</h4> </div> </a>  </div>";
+		  $.get("http://47.97.182.0:8080/treeace/getbuinsee", 
+		  function(data,status){
+			  console.log("data",data);
+			  console.log("status",status);
+			  var mydata=data.data;
+			  if(status == "success"){
+				  for(var i=0;i<mydata.length;i++){ 
+					  $(".navbar-brand").eq(i).html(mydata[i].businessName);
+					  var category=mydata[i].category; 
+					   for(var j=0;j<category.length;j++){ 
+					   		$(".navbar").eq(i).find("li").eq(j).find("a").html(category[j].categoryName);
+						   var company=category[j].company; 
+						    for(var k=0;k<company.length;k++){ 
+								    var myitem=item;
+									myitem=myitem.replace(/imgsrc/,company[k].logo);
+									myitem=myitem.replace(/companyName/,company[k].companyName); 
+						    		$(".tab-content").eq(i).find(".tab-pane").eq(j).find(".row").append(myitem);      
+						    }  
+					   }
+				  }
+			  }else{
+				  alert("服务器异常");
+			  }
+			  // $(".tab-content").eq(0).find(".tab-pane").eq(0).html(item); 
+		  });
+		  
+	 })
+	 
+ </script>
  
 </head>
 <body> 
@@ -99,184 +132,40 @@
 			</div>
 			<div>
 				<ul class="nav nav-tabs nav-justified">
-					<li class="active"><a data-toggle="tab" href="#home">品牌官网</a></li>
-					<li><a data-toggle="tab" href="#menu1">电商网站</a></li>
-					<li><a data-toggle="tab" href="#menu2">门户网站</a></li>
-					<li><a data-toggle="tab" href="#menu3">营销网站</a></li>
+					<li class="active"><a data-toggle="tab" href="#menu00">品牌官网</a></li>
+					<li><a data-toggle="tab" href="#menu01">电商网站</a></li>
+					<li><a data-toggle="tab" href="#menu02">门户网站</a></li>
+					<li><a data-toggle="tab" href="#menu03">营销网站</a></li>
 				</ul> 
 			</div>
 			</div>
 		</nav>  
 		  <!-- 导航栏 一 内容-->
-		  <div class="row">
+		 <div class="row">
 			  <div class="col-xs-1"> </div>
 			  <div class="col-xs-11"> 
 				  <div class="tab-content">  
-				  			<div id="home" class="tab-pane fade in active"> 
+				  			<div id="menu00" class="tab-pane fade in active"> 
 							   <div class="row">
-									<div class="  col-md-2">
-										<a href="#" class="thumbnail">
-										<img src="images/2.jpg"
-										alt="百度公司" class="img-thumbnail">
-											 <div class="caption">
-													<h4>百度公司</h4>
-											 </div>
-										</a>
-										 
-									</div>
-									<div class="  col-md-2">
-									<a href="#" class="thumbnail">
-									<img src="images/1.jpg"
-									alt="通用的占位符缩略图" class="img-thumbnail">
-											<div class="caption">
-													 <h4>百度公司</h4>
-											</div>
-									</a>
-									</div>
-									<div class=" col-md-2">
-									<a href="#" class="thumbnail">
-									<img src="images/2.jpg"
-									alt="通用的占位符缩略图" class="img-thumbnail">
-											<div class="caption">
-													 <h4>百度公司</h4>
-											</div>
-									</a>
-									</div>
-									<div class=" col-md-2">
-									<a href="#" class="thumbnail">
-									<img src="images/1.jpg"
-									alt="通用的占位符缩略图" class="img-thumbnail">
-											<div class="caption">
-													 <h4>百度公司</h4>
-											</div>
-									</a>
-									</div>
-							    </div>
+									
+									
+								</div>
 				  			   
 				  			</div>
-				  			<div id="menu1" class="tab-pane fade">
+				  			<div id="menu01" class="tab-pane fade">
 				  			  <div class="row">
-				  			  									<div class="  col-md-2">
-				  			  										<a href="#" class="thumbnail">
-				  			  										<img src="images/2.jpg"
-				  			  										alt="百度公司">
-				  			  											 <div class="caption">
-				  			  													<h4>百度公司</h4>
-				  			  											 </div>
-				  			  										</a>
-				  			  										 
-				  			  									</div>
-				  			  									<div class="  col-md-2">
-				  			  									<a href="#" class="thumbnail">
-				  			  									<img src="images/1.jpg"
-				  			  									alt="通用的占位符缩略图">
-				  			  											<div class="caption">
-				  			  													 <h4>百度公司</h4>
-				  			  											</div>
-				  			  									</a>
-				  			  									</div>
-				  			  									<div class=" col-md-2">
-				  			  									<a href="#" class="thumbnail">
-				  			  									<img src="images/2.jpg"
-				  			  									alt="通用的占位符缩略图">
-				  			  											<div class="caption">
-				  			  													 <h4>百度公司</h4>
-				  			  											</div>
-				  			  									</a>
-				  			  									</div>
-				  			  									<div class=" col-md-2">
-				  			  									<a href="#" class="thumbnail">
-				  			  									<img src="images/1.jpg"
-				  			  									alt="通用的占位符缩略图">
-				  			  											<div class="caption">
-				  			  													 <h4>百度公司</h4>
-				  			  											</div>
-				  			  									</a>
-				  			  									</div>
+				  			  									 
 				  			   </div>
 				  			  
 				  			</div>
-				  			<div id="menu2" class="tab-pane fade">
-				  			  <div class="row">
-				  			  									<div class="  col-md-2">
-				  			  										<a href="#" class="thumbnail">
-				  			  										<img src="images/2.jpg"
-				  			  										alt="百度公司">
-				  			  											 <div class="caption">
-				  			  													<h4>百度公司</h4>
-				  			  											 </div>
-				  			  										</a>
-				  			  										 
-				  			  									</div>
-				  			  									<div class="  col-md-2">
-				  			  									<a href="#" class="thumbnail">
-				  			  									<img src="images/1.jpg"
-				  			  									alt="通用的占位符缩略图">
-				  			  											<div class="caption">
-				  			  													 <h4>百度公司</h4>
-				  			  											</div>
-				  			  									</a>
-				  			  									</div>
-				  			  									<div class=" col-md-2">
-				  			  									<a href="#" class="thumbnail">
-				  			  									<img src="images/2.jpg"
-				  			  									alt="通用的占位符缩略图">
-				  			  											<div class="caption">
-				  			  													 <h4>百度公司</h4>
-				  			  											</div>
-				  			  									</a>
-				  			  									</div>
-				  			  									<div class=" col-md-2">
-				  			  									<a href="#" class="thumbnail">
-				  			  									<img src="images/1.jpg"
-				  			  									alt="通用的占位符缩略图">
-				  			  											<div class="caption">
-				  			  													 <h4>百度公司</h4>
-				  			  											</div>
-				  			  									</a>
-				  			  									</div>
+				  			<div id="menu02" class="tab-pane fade">
+				  			  <div class="row"> 
 				  			   </div>
 				  			  
 				  			</div>
-				  			<div id="menu3" class="tab-pane fade">
+				  			<div id="menu03" class="tab-pane fade">
 				  			  <div class="row">
-				  			  									<div class="  col-md-2">
-				  			  										<a href="#" class="thumbnail">
-				  			  										<img src="images/2.jpg"
-				  			  										alt="百度公司">
-				  			  											 <div class="caption">
-				  			  													<h4>百度公司</h4>
-				  			  											 </div>
-				  			  										</a>
-				  			  										 
-				  			  									</div>
-				  			  									<div class="  col-md-2">
-				  			  									<a href="#" class="thumbnail">
-				  			  									<img src="images/1.jpg"
-				  			  									alt="通用的占位符缩略图">
-				  			  											<div class="caption">
-				  			  													 <h4>百度公司</h4>
-				  			  											</div>
-				  			  									</a>
-				  			  									</div>
-				  			  									<div class=" col-md-2">
-				  			  									<a href="#" class="thumbnail">
-				  			  									<img src="images/2.jpg"
-				  			  									alt="通用的占位符缩略图">
-				  			  											<div class="caption">
-				  			  													 <h4>百度公司</h4>
-				  			  											</div>
-				  			  									</a>
-				  			  									</div>
-				  			  									<div class=" col-md-2">
-				  			  									<a href="#" class="thumbnail">
-				  			  									<img src="images/1.jpg"
-				  			  									alt="通用的占位符缩略图">
-				  			  											<div class="caption">
-				  			  													 <h4>百度公司</h4>
-				  			  											</div>
-				  			  									</a>
-				  			  									</div>
+				  			  								
 				  			   </div>
 				  			  
 				  			</div>
@@ -284,6 +173,198 @@
 			  </div>
 		  </div>
 		   
+		 <!-- 导航栏 二 -->
+		<nav class="navbar navbar-default" role="navigation">
+			<div class="container-fluid">
+			<div class="navbar-header">
+				<a class="navbar-brand" href="#">网站建设</a>
+			</div>
+			<div>
+				<ul class="nav nav-tabs nav-justified">
+					<li class="active"><a data-toggle="tab" href="#menu10">品牌官网</a></li>
+					<li><a data-toggle="tab" href="#menu11">电商网站</a></li>
+					<li><a data-toggle="tab" href="#menu12">门户网站</a></li>
+					<li><a data-toggle="tab" href="#menu13">营销网站</a></li>
+				</ul> 
+			</div>
+			</div>
+		   </nav>  
+		<!-- 导航栏 二 内容-->
+		<div class="row">
+			  <div class="col-xs-1"> </div>
+			  <div class="col-xs-11"> 
+				  <div class="tab-content">  
+							<div id="menu10" class="tab-pane fade in active"> 
+							   <div class="row">
+									 
+								</div>
+							   
+							</div>
+							<div id="menu11" class="tab-pane fade">
+							  <div class="row"> 
+							   </div>
+							  
+							</div>
+							<div id="menu12" class="tab-pane fade">
+							  <div class="row">
+														 
+							   </div>
+							  
+							</div>
+							<div id="menu13" class="tab-pane fade">
+							  <div class="row">
+																 
+							   </div>
+							  
+							</div>
+				  </div> 
+			  </div>
+			 </div>
+			  
+		 <!-- 导航栏 三 -->
+		 <nav class="navbar navbar-default" role="navigation">
+			<div class="container-fluid">
+			<div class="navbar-header">
+				<a class="navbar-brand" href="#">网站建设</a>
+			</div>
+			<div>
+				<ul class="nav nav-tabs nav-justified">
+					<li class="active"><a data-toggle="tab" href="#menu20">品牌官网</a></li>
+					<li><a data-toggle="tab" href="#menu21">电商网站</a></li>
+					<li><a data-toggle="tab" href="#menu22">门户网站</a></li>
+					<li><a data-toggle="tab" href="#menu23">营销网站</a></li>
+				</ul> 
+			</div>
+			</div>
+		  </nav>  
+		<!-- 导航栏 三 内容-->
+		<div class="row">
+			  	  <div class="col-xs-1"> </div>
+			  	  <div class="col-xs-11"> 
+			  		  <div class="tab-content">  
+			  		  			<div id="menu20" class="tab-pane fade in active"> 
+			  					   <div class="row">
+			  							 
+			  					    </div>
+			  		  			   
+			  		  			</div>
+			  		  			<div id="menu21" class="tab-pane fade">
+			  		  			  <div class="row">
+			  		  			  								 
+			  		  			   </div>
+			  		  			  
+			  		  			</div>
+			  		  			<div id="menu22" class="tab-pane fade">
+			  		  			  <div class="row">
+			  		  			  									 
+			  		  			   </div>
+			  		  			  
+			  		  			</div>
+			  		  			<div id="menu23" class="tab-pane fade">
+			  		  			  <div class="row">
+			  		  			  									 
+			  		  			   </div>
+			  		  			  
+			  		  			</div>
+			  		  </div> 
+			  	  </div>
+			    </div>
+			     
+		 <!-- 导航栏 四 -->
+		 <nav class="navbar navbar-default" role="navigation">
+			<div class="container-fluid">
+			<div class="navbar-header">
+				<a class="navbar-brand" href="#">网站建设</a>
+			</div>
+			<div>
+				<ul class="nav nav-tabs nav-justified">
+					<li class="active"><a data-toggle="tab" href="#menu30">品牌官网</a></li>
+					<li><a data-toggle="tab" href="#menu31">电商网站</a></li>
+					<li><a data-toggle="tab" href="#menu32">门户网站</a></li>
+					<li><a data-toggle="tab" href="#menu33">营销网站</a></li>
+				</ul> 
+			</div>
+			</div>
+		 </nav>  
+		 <!-- 导航栏 四 内容-->
+		 <div class="row">
+			  <div class="col-xs-1"> </div>
+			  <div class="col-xs-11"> 
+				  <div class="tab-content">  
+							<div id="menu30" class="tab-pane fade in active"> 
+							   <div class="row">
+									 
+								</div>
+							   
+							</div>
+							<div id="menu31" class="tab-pane fade">
+							  <div class="row">
+							   </div>
+							  
+							</div>
+							<div id="menu32" class="tab-pane fade">
+							  <div class="row"> 
+							   </div>
+							  
+							</div>
+							<div id="menu33" class="tab-pane fade">
+							  <div class="row">
+																 
+							   </div>
+							  
+							</div>
+				  </div> 
+			  </div>
+		   </div>
+			
+		<!-- 导航栏 五 -->
+		 <nav class="navbar navbar-default" role="navigation">
+			<div class="container-fluid">
+			<div class="navbar-header">
+				<a class="navbar-brand" href="#">网站建设</a>
+			</div>
+			<div>
+				<ul class="nav nav-tabs nav-justified">
+					<li class="active"><a data-toggle="tab" href="#menu40">品牌官网</a></li>
+					<li><a data-toggle="tab" href="#menu41">电商网站</a></li>
+					<li><a data-toggle="tab" href="#menu42">门户网站</a></li>
+					<li><a data-toggle="tab" href="#menu43">营销网站</a></li>
+				</ul> 
+			</div>
+			</div>
+		</nav>  
+		 <!-- 导航栏 五 内容-->
+		 <div class="row">
+						  <div class="col-xs-1"> </div>
+						  <div class="col-xs-11"> 
+							  <div class="tab-content">  
+							  			<div id="menu40" class="tab-pane fade in active"> 
+										   <div class="row">
+												 
+										    </div>
+							  			   
+							  			</div>
+							  			<div id="menu41" class="tab-pane fade">
+							  			  <div class="row"> 
+							  			   </div>
+							  			  
+							  			</div>
+							  			<div id="menu42" class="tab-pane fade">
+							  			  <div class="row">
+							  			  								 
+							  			   </div>
+							  			  
+							  			</div>
+							  			<div id="menu43" class="tab-pane fade">
+							  			  <div class="row">
+							  			  									 
+							  			   </div>
+							  			  
+							  			</div>
+							  </div> 
+						  </div>
+					  </div>
+					   
 	 </div>
 	<!-- 模态框（Modal） -->
 	<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
