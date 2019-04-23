@@ -16,25 +16,23 @@
  <script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
  <script language="JScript">
 	 $(function(){
-		 var item="<div class='col-md-2'> <a href='#' class='thumbnail'> <img src='imgsrc' alt='百度公司' class='img-thumbnail'>"+
-			 		 "<div class='caption'> <h4>companyName</h4> </div> </a>  </div>";
+		 var item="<div class='col-md-2 col-xs-3'> <a href='#' class='thumbnail'> <img src='imgsrc' alt='' class='img-thumbnail'>"+
+			 		 "<div class='caption'  style='word-break:break-all;'>companyName </div> </a>  </div>";
 		  $.get("http://47.97.182.0:8080/treeace/getbuinsee", 
 		  function(data,status){
 			  console.log("data",data);
 			  console.log("status",status);
 			  var mydata=data.data;
 			  if(status == "success"){
-				  for(var i=0;i<mydata.length;i++){ 
-					  $(".navbar-brand").eq(i).html(mydata[i].businessName);
+				  for(var i=0;i<mydata.length;i++){  
 					  var category=mydata[i].category; 
-					   for(var j=0;j<category.length;j++){ 
-					   		$(".navbar").eq(i).find("li").eq(j).find("a").html(category[j].categoryName);
+					   for(var j=0;j<category.length;j++){  
 						   var company=category[j].company; 
 						    for(var k=0;k<company.length;k++){ 
 								    var myitem=item;
 									myitem=myitem.replace(/imgsrc/,company[k].logo);
 									myitem=myitem.replace(/companyName/,company[k].companyName); 
-						    		$(".tab-content").eq(i).find(".tab-pane").eq(j).find(".row").append(myitem);      
+						    		$("#logolist").append(myitem);      
 						    }  
 					   }
 				  }
@@ -92,28 +90,34 @@
 		</div>
 		<div class="bottom-header">
 			<div class="container">
-				<div class="header-bottom-left">
-					<div class="logo">
+				<div class="raw">
+					 
+						 
+					<div class="col-xs-12 col-sm-3">
 						<a href="index.html"><img   src="images/bab.jpg" style="border-radius: 5px;" width="250" height="80" ></a>
 					</div>
 					<!-- 搜索栏 -->
-					<div class="search">
-						<input type="text"  value="" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = '';}" >
-						<input type="submit"  value="搜索"> 
-					</div>
-					<div class="clearfix"> </div>
-				</div>
-				<div class="header-bottom-right">
-					<ul class="men-grid">
-						<li><a href="contact.html"><span> </span>发布需求</a></li>
-						
-						<!-- <li><a href="login.html"><span> </span>我的账户</a></li> -->
-						<!-- <li class="login"><a href="login.html"><span> </span>LOGIN</a>|</li> -->
-						<li class="cart" data-toggle="modal" data-target="#myModal"><a href="#"><span> </span>技术咨询</a></li>
-					</ul>
-					<!-- <div class="sign-up-right">
-						<a href="register.html">SIGNUP</a>
-					</div> -->
+					<div class="col-xs-12 col-sm-6">
+						<div class="input-group">
+						<input type="text" class="form-control input-lg"><span class="input-group-addon btn btn-primary">搜索</span>
+						</div>
+					 </div>
+							 
+					<div class="col-xs-12 col-sm-3">
+						 
+							<ul class="men-grid">
+								<li><a href="contact.html"><span> </span>发布需求</a></li>
+								
+								<!-- <li><a href="login.html"><span> </span>我的账户</a></li> -->
+								<!-- <li class="login"><a href="login.html"><span> </span>LOGIN</a>|</li> -->
+								<li class="cart" data-toggle="modal" data-target="#myModal"><a href="#"><span> </span>技术咨询</a></li>
+							</ul>
+							<!-- <div class="sign-up-right">
+								<a href="register.html">SIGNUP</a>
+							</div> -->
+						 
+					</div>	
+					
 				</div>
 				<div class="clearfix"> </div>	
 			</div>
@@ -121,8 +125,13 @@
 	</div>
 	<!-- container --> 
 	<div class="container">
-		 <h2>合作公司</h2>
-		  <p><strong>提示:</strong>  合作公司都是经过BAB联盟认证，信用良好的公司，BAB联盟对提供商拥有者一套完整的奖惩机制</p>
+		 <h2>战略合作公司</h2>
+		  <p><strong>提示:</strong>  合作公司都是经过BAB联盟认证，信用良好的公司，BAB联盟对提供商拥有者一套完整的奖惩机制</p> 
+		 
+		 <!--  -->
+		 <div id="logolist" class="row" style="border:solid 5px #BCE8F1;border-radius: 5px;">
+				 
+		 </div>
 		 
 		 <!-- 导航栏 一 -->
 		 <nav class="navbar navbar-default" role="navigation">
@@ -140,231 +149,85 @@
 			</div>
 			</div>
 		</nav>  
-		  <!-- 导航栏 一 内容-->
-		 <div class="row">
-			  <div class="col-xs-1"> </div>
-			  <div class="col-xs-11"> 
-				  <div class="tab-content">  
-				  			<div id="menu00" class="tab-pane fade in active"> 
-							   <div class="row">
-									
-									
-								</div>
-				  			   
-				  			</div>
-				  			<div id="menu01" class="tab-pane fade">
-				  			  <div class="row">
-				  			  									 
-				  			   </div>
-				  			  
-				  			</div>
-				  			<div id="menu02" class="tab-pane fade">
-				  			  <div class="row"> 
-				  			   </div>
-				  			  
-				  			</div>
-				  			<div id="menu03" class="tab-pane fade">
-				  			  <div class="row">
-				  			  								
-				  			   </div>
-				  			  
-				  			</div>
-				  </div> 
-			  </div>
-		  </div>
-		   
 		 <!-- 导航栏 二 -->
 		<nav class="navbar navbar-default" role="navigation">
 			<div class="container-fluid">
 			<div class="navbar-header">
-				<a class="navbar-brand" href="#">网站建设</a>
+				<a class="navbar-brand" href="#">微信开发</a>
 			</div>
 			<div>
 				<ul class="nav nav-tabs nav-justified">
-					<li class="active"><a data-toggle="tab" href="#menu10">品牌官网</a></li>
-					<li><a data-toggle="tab" href="#menu11">电商网站</a></li>
+					<li class="active"><a data-toggle="tab" href="#menu10">微官网</a></li>
+					<li><a data-toggle="tab" href="#menu11">小程序</a></li>
 					<li><a data-toggle="tab" href="#menu12">门户网站</a></li>
-					<li><a data-toggle="tab" href="#menu13">营销网站</a></li>
+					<li><a data-toggle="tab" href="#menu13">微功能</a></li>
+					<li><a data-toggle="tab" href="#menu13">微商城</a></li>
 				</ul> 
 			</div>
 			</div>
-		   </nav>  
-		<!-- 导航栏 二 内容-->
-		<div class="row">
-			  <div class="col-xs-1"> </div>
-			  <div class="col-xs-11"> 
-				  <div class="tab-content">  
-							<div id="menu10" class="tab-pane fade in active"> 
-							   <div class="row">
-									 
-								</div>
-							   
-							</div>
-							<div id="menu11" class="tab-pane fade">
-							  <div class="row"> 
-							   </div>
-							  
-							</div>
-							<div id="menu12" class="tab-pane fade">
-							  <div class="row">
-														 
-							   </div>
-							  
-							</div>
-							<div id="menu13" class="tab-pane fade">
-							  <div class="row">
-																 
-							   </div>
-							  
-							</div>
-				  </div> 
-			  </div>
-			 </div>
-			  
-		 <!-- 导航栏 三 -->
-		 <nav class="navbar navbar-default" role="navigation">
+		 </nav> 
+		<!-- 导航栏 三 -->
+		<nav class="navbar navbar-default" role="navigation">
 			<div class="container-fluid">
 			<div class="navbar-header">
-				<a class="navbar-brand" href="#">网站建设</a>
+				<a class="navbar-brand" href="#">APP开发</a>
 			</div>
 			<div>
 				<ul class="nav nav-tabs nav-justified">
-					<li class="active"><a data-toggle="tab" href="#menu20">品牌官网</a></li>
-					<li><a data-toggle="tab" href="#menu21">电商网站</a></li>
-					<li><a data-toggle="tab" href="#menu22">门户网站</a></li>
-					<li><a data-toggle="tab" href="#menu23">营销网站</a></li>
+					<li class="active"><a data-toggle="tab" href="#menu10">生活微服务APP</a></li>
+					<li><a data-toggle="tab" href="#menu11">电商APP</a></li> 
+					<li><a data-toggle="tab" href="#menu13">企业办公APP</a></li>
 				</ul> 
 			</div>
 			</div>
-		  </nav>  
-		<!-- 导航栏 三 内容-->
-		<div class="row">
-			  	  <div class="col-xs-1"> </div>
-			  	  <div class="col-xs-11"> 
-			  		  <div class="tab-content">  
-			  		  			<div id="menu20" class="tab-pane fade in active"> 
-			  					   <div class="row">
-			  							 
-			  					    </div>
-			  		  			   
-			  		  			</div>
-			  		  			<div id="menu21" class="tab-pane fade">
-			  		  			  <div class="row">
-			  		  			  								 
-			  		  			   </div>
-			  		  			  
-			  		  			</div>
-			  		  			<div id="menu22" class="tab-pane fade">
-			  		  			  <div class="row">
-			  		  			  									 
-			  		  			   </div>
-			  		  			  
-			  		  			</div>
-			  		  			<div id="menu23" class="tab-pane fade">
-			  		  			  <div class="row">
-			  		  			  									 
-			  		  			   </div>
-			  		  			  
-			  		  			</div>
-			  		  </div> 
-			  	  </div>
-			    </div>
-			     
-		 <!-- 导航栏 四 -->
-		 <nav class="navbar navbar-default" role="navigation">
+		 </nav> 
+		<!-- 导航栏 四 -->
+		<nav class="navbar navbar-default" role="navigation">
 			<div class="container-fluid">
 			<div class="navbar-header">
-				<a class="navbar-brand" href="#">网站建设</a>
+				<a class="navbar-brand" href="#">行业应用开发</a>
 			</div>
 			<div>
 				<ul class="nav nav-tabs nav-justified">
-					<li class="active"><a data-toggle="tab" href="#menu30">品牌官网</a></li>
-					<li><a data-toggle="tab" href="#menu31">电商网站</a></li>
-					<li><a data-toggle="tab" href="#menu32">门户网站</a></li>
-					<li><a data-toggle="tab" href="#menu33">营销网站</a></li>
+					<li class="active"><a data-toggle="tab" href="#menu10">电商系统软件</a></li>
+					<li><a data-toggle="tab" href="#menu11">互联网应用软件</a></li>
+					<li><a data-toggle="tab" href="#menu12">办公管理软件</a></li>
+					<li><a data-toggle="tab" href="#menu13">仓储物流软件</a></li>
 				</ul> 
 			</div>
 			</div>
-		 </nav>  
-		 <!-- 导航栏 四 内容-->
-		 <div class="row">
-			  <div class="col-xs-1"> </div>
-			  <div class="col-xs-11"> 
-				  <div class="tab-content">  
-							<div id="menu30" class="tab-pane fade in active"> 
-							   <div class="row">
-									 
-								</div>
-							   
-							</div>
-							<div id="menu31" class="tab-pane fade">
-							  <div class="row">
-							   </div>
-							  
-							</div>
-							<div id="menu32" class="tab-pane fade">
-							  <div class="row"> 
-							   </div>
-							  
-							</div>
-							<div id="menu33" class="tab-pane fade">
-							  <div class="row">
-																 
-							   </div>
-							  
-							</div>
-				  </div> 
-			  </div>
-		   </div>
-			
+		 </nav> 
 		<!-- 导航栏 五 -->
-		 <nav class="navbar navbar-default" role="navigation">
+		<nav class="navbar navbar-default" role="navigation">
 			<div class="container-fluid">
 			<div class="navbar-header">
-				<a class="navbar-brand" href="#">网站建设</a>
+				<a class="navbar-brand" href="#">logo设计</a>
 			</div>
 			<div>
 				<ul class="nav nav-tabs nav-justified">
-					<li class="active"><a data-toggle="tab" href="#menu40">品牌官网</a></li>
-					<li><a data-toggle="tab" href="#menu41">电商网站</a></li>
-					<li><a data-toggle="tab" href="#menu42">门户网站</a></li>
-					<li><a data-toggle="tab" href="#menu43">营销网站</a></li>
+					<li class="active"><a data-toggle="tab" href="#menu10">200元</a></li>
+					<li><a data-toggle="tab" href="#menu11">500元</a></li>
+					<li><a data-toggle="tab" href="#menu12">1000元</a></li>
+					<li><a data-toggle="tab" href="#menu13">2000元</a></li>
 				</ul> 
 			</div>
 			</div>
-		</nav>  
-		 <!-- 导航栏 五 内容-->
-		 <div class="row">
-						  <div class="col-xs-1"> </div>
-						  <div class="col-xs-11"> 
-							  <div class="tab-content">  
-							  			<div id="menu40" class="tab-pane fade in active"> 
-										   <div class="row">
-												 
-										    </div>
-							  			   
-							  			</div>
-							  			<div id="menu41" class="tab-pane fade">
-							  			  <div class="row"> 
-							  			   </div>
-							  			  
-							  			</div>
-							  			<div id="menu42" class="tab-pane fade">
-							  			  <div class="row">
-							  			  								 
-							  			   </div>
-							  			  
-							  			</div>
-							  			<div id="menu43" class="tab-pane fade">
-							  			  <div class="row">
-							  			  									 
-							  			   </div>
-							  			  
-							  			</div>
-							  </div> 
-						  </div>
-					  </div>
-					   
+		 </nav> 
+		 
+		 
+		 
+		<div class="row">
+				 <div class="col-sm-11">  
+				   <address class="address"> 
+				  	<dl>
+				  		<dt>联系我们</dt> 
+				  		<dd>联系电话:<span> +17630054772</span></dd>
+				  		<!-- <dd>传真: <span>+1 800 658 5784</span></dd> -->
+				  		<dd>邮箱:&nbsp; <a href="mailto@vintage.com">787928785@qq.com</a></dd>
+				  	</dl>
+				  </address>
+				  </div> 
+		</div>			   
 	 </div>
 	<!-- 模态框（Modal） -->
 	<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
